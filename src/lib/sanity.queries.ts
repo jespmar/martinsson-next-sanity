@@ -28,7 +28,8 @@ export interface Post {
   _type: 'post'
   _id: string
   _createdAt: string
-  title?: string
+  title?: string,
+  publishDate?: string
   slug: Slug
   excerpt?: string
   mainImage?: ImageAsset

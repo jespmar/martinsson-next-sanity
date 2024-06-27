@@ -11,6 +11,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'publishDate',
+      title: 'Publish Date',
+      type: 'date',
+    }),
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -24,7 +29,6 @@ export default defineType({
       name: 'excerpt',
       title: 'Excerpt',
       type: 'text',
-      rows: 4,
     }),
     defineField({
       name: 'mainImage',

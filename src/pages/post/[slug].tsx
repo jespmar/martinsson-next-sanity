@@ -1,4 +1,4 @@
-import { PortableText } from '@portabletext/react'
+// import { PortableText } from '@portabletext/react'
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import Image from 'next/image'
 import { useLiveQuery } from 'next-sanity/preview'
@@ -15,6 +15,7 @@ import {
 } from '~/lib/sanity.queries'
 import type { SharedPageProps } from '~/pages/_app'
 import { formatDate } from '~/utils'
+import { PortableText } from '~/components/PortableText'
 
 interface Query {
   [key: string]: string
@@ -53,27 +54,30 @@ export default function ProjectSlugRoute(
 
   return (
     <Container>
-      <section className="post">
+    <div className='w-full'>
+    <section className="max-w-3xl mx-auto">
+      <h3 className='text-center text-sm text-gray-600'>{post.publishDate ? <span>{formatDate(post.publishDate)}</span> : <span>{formatDate(post._createdAt)}</span>}</h3>
+
+    <h1 className="text-5xl text-center uppercase">{post.title}</h1>
         {post.mainImage ? (
           <Image
-            className="post__cover"
+            className="mx-auto  object-contain rounded-lg my-4"
             src={urlForImage(post.mainImage).url()}
-            height={231}
-            width={367}
+            height={1000}
+            width={1000}
             alt=""
           />
         ) : (
           <div className="post__cover--none" />
         )}
         <div className="post__container">
-          <h1 className="post__title">{post.title}</h1>
-          <p className="post__excerpt">{post.excerpt}</p>
-          <p className="post__date">{formatDate(post._createdAt)}</p>
+          <p className="text-xl my-3">{post.excerpt}</p>
           <div className="post__content">
-            <PortableText value={post.body} />
+            <PortableText body={post.body}/>
           </div>
         </div>
       </section>
+    </div>
     </Container>
   )
 }

@@ -56,5 +56,13 @@ export default defineType({
         ],
       },
     }),
+    defineArrayMember({
+      title: 'Image',
+      name: 'Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    })
   ],
 })
