@@ -55,8 +55,8 @@ return (
         WebkitTransition: "all .9s ease",
         MozTransition: "all .9s ease"}} className={`w-full fixed top-0 px-4 py-5 ${navbarColor}`}>
         <div className="flex gap-10 justify-between lg:justify-start w-full max-w-7xl mx-auto">
-            <h1 className="font-mono text-2xl">martinsson<span className="text-indigo-500">.</span>io</h1>
-            <div className="hidden font-mono gap-5 lg:flex text-base self-center ">
+            <h1 className="font-mono text-3xl">martinsson<span className="text-indigo-500">.</span>io</h1>
+            <div className="hidden font-mono gap-5 lg:flex text-lg self-center ">
                 <Link href={"/"} className="hover:text-indigo-500 underline underline-offset-8">Home</Link>
                 <Link href={"/"} className="hover:text-indigo-500">Blog</Link>
                 <Link href={"/"} className="hover:text-indigo-500">About</Link>
