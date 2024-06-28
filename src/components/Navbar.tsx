@@ -84,11 +84,11 @@ export const Navbar = () => {
 
 return (
     <div style={{
-        transition: "all .9s ease",
-        WebkitTransition: "all .9s ease",
-        MozTransition: "all .9s ease"}} className={`w-full fixed top-0 px-4 flex flex-col overflow-hidden ${navbarColor} ${nav()}`}>
+        transition: "all .5s ease",
+        WebkitTransition: "all .5s ease",
+        MozTransition: "all .5s ease"}} className={`w-full fixed top-0 px-4 flex flex-col overflow-hidden ${navbarColor} ${nav()}`}>
         <div className="flex gap-10 justify-between lg:justify-start w-full max-w-7xl mx-auto self-center mt-2">
-            <h1 className="font-mono text-3xl self-center">martinsson<span className="text-indigo-500">.</span>io</h1>
+            <Link href={"/"} className="font-mono text-3xl self-center">martinsson<span className="text-indigo-500">.</span>io</Link>
             <div className="flex justify-between w-full">
             <div className="hidden font-mono gap-5 lg:flex text-lg self-center ">
                 <Link href={"/"} className="hover:text-indigo-500 underline underline-offset-8">Home</Link>
