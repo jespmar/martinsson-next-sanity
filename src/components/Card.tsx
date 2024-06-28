@@ -15,7 +15,7 @@ export default function Card({ post }: { post: Post }) {
 
   }
   return (
-    <div className="w-full">
+    <div className="w-full px-1 lg:px-10 py-3">
       {post.mainImage ? (
         <Image
           onClick={openPost}
@@ -37,6 +37,7 @@ export default function Card({ post }: { post: Post }) {
         </h3>
         <p className="font-thin">{post.excerpt}</p>
       </div>
+      <hr className='mt-3'/>
     </div>
   )
 }

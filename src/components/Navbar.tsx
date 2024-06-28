@@ -8,7 +8,7 @@ import { useEffect, useState } from "react"
 
 export const Navbar = () => {
 
-    const [navbarColor, setNavbarColor] = useState("bg-slate-950 text-white bg-opacity-80")
+    const [navbarColor, setNavbarColor] = useState("bg-white-950 text-slate-950 bg-opacity-80")
     const [navBarLight, setNavbarLight] = useState(false)
     const [{ x, y }, scrollTo] = useWindowScroll();
 
@@ -27,7 +27,7 @@ export const Navbar = () => {
 
     if (y < 50) {
         if (navBarLight) {
-            setNavbarColor("bg-slate-950 text-white bg-opacity-90")
+            setNavbarColor("bg-white-950 text-slate-950 bg-opacity-80")
             setNavbarLight(false)
         }
     }
