@@ -1,3 +1,4 @@
+"use client"
 import { useWindowScroll } from "@uidotdev/usehooks";
 import Link from "next/link";
 import { useRouter } from "next/router";
