@@ -1,19 +1,46 @@
-"use client"
+
 import { useWindowScroll } from "@uidotdev/usehooks";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useLiveQuery } from "next-sanity/preview";
 import { useEffect, useState } from "react"
 import { AiOutlinePlus } from "react-icons/ai";
 import { FaLinkedin } from "react-icons/fa";
 import { GrInstagram } from "react-icons/gr";
 import { GrGithub } from "react-icons/gr";
 
+import { readToken } from "~/lib/sanity.api";
+import { getClient } from "~/lib/sanity.client";
+import { getPages, getPosts,pagesQuery,Post } from "~/lib/sanity.queries";
+import { SharedPageProps } from "~/pages/_app";
+
+
 
 
 export const Navbar = () => {
 
+    const dummy = "dummy"
+    
+    useEffect(() => {
+        const client = getClient(false ? { token: readToken } : undefined)
+        getPages(client).then((pages) => {
+
+            const links = []
+
+            for (let page of pages) {
+
+                links.push({title: page.title})
+            }
+
+            setNavLinks(links)
+
+        })
+    },[])
+
     const [navbarColor, setNavbarColor] = useState("bg-white text-slate-950")
     const [navBarLight, setNavbarLight] = useState(false)
+    const [navLinks, setNavLinks]:any = useState()
     const [{ x, y }, scrollTo] = useWindowScroll();
     const [navRot, setNavRot] = useState(false)
 
@@ -71,7 +98,11 @@ return (
             <div className="hidden font-mono gap-5 lg:flex text-lg self-center ">
                 <Link href={"/"} className="hover:text-indigo-500 underline underline-offset-8">Home</Link>
                 <Link href={"/"} className="hover:text-indigo-500">Blog</Link>
-                <Link href={"/"} className="hover:text-indigo-500">About</Link>
+                {navLinks && navLinks.map((link:any, index:number) => {
+                    return (
+                        <Link key={index} href={"/"} className="hover:text-indigo-500">{link.title}</Link>
+                    )
+                })}
             </div>
             <div className="hidden font-mono lg:flex text-lg self-center h-full gap-5">
             <FaLinkedin className="h-6 w-6 self-center hover:text-indigo-700 cursor-pointer" />

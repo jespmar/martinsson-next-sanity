@@ -33,7 +33,6 @@ export default function IndexPage(
 ) {
   const [posts] = useLiveQuery<Post[]>(props.posts, postsQuery)
 
-  
   return (
   <><Container>
       <section className='grid grid-cols-1 lg:grid-cols-2 w-full'>

@@ -32,8 +32,8 @@ const iframeOptions = {
 
 export default defineConfig({
   basePath: '/studio',
-  name: 'project-name',
-  title: 'Project Name',
+  name: 'martinsson-io',
+  title: 'martinsson.io',
   projectId,
   dataset,
   //edit schemas in './src/schemas'
