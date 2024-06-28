@@ -20,7 +20,6 @@ import { SharedPageProps } from "~/pages/_app";
 
 export const Navbar = () => {
 
-    const dummy = "dummy"
     
     useEffect(() => {
         const client = getClient(false ? { token: readToken } : undefined)
@@ -30,7 +29,7 @@ export const Navbar = () => {
 
             for (let page of pages) {
 
-                links.push({title: page.title})
+                links.push({title: page.title, route: page.slug.current})
             }
 
             setNavLinks(links)
@@ -45,6 +44,9 @@ export const Navbar = () => {
     const [navRot, setNavRot] = useState(false)
 
     const router = useRouter()
+    const setActive = (path:string) => {
+        
+    }
 
     console.log(router.asPath)
 
@@ -100,7 +102,7 @@ return (
                 <Link href={"/"} className="hover:text-indigo-500">Blog</Link>
                 {navLinks && navLinks.map((link:any, index:number) => {
                     return (
-                        <Link key={index} href={"/"} className="hover:text-indigo-500">{link.title}</Link>
+                        <Link key={index} href={`/${link.route}`} className="hover:text-indigo-500">{link.title}</Link>
                     )
                 })}
             </div>
@@ -123,15 +125,18 @@ return (
         WebkitTransition: "all .9s ease",
         MozTransition: "all .9s ease"}} className={`flex flex-col ${nav()} h-screen gap-20`}>
             <div className="font-mono gap-5 flex flex-col text-2xl mt-10 self-center w-full text-center">
-                <div className="hover:bg-indigo-100 w-full py-3 rounded-lg">
-                  <Link onClick={() => setNavRot(!navRot)} href={"/"} className="hover:text-indigo-500 underline underline-offset-8">Home</Link>  
-                </div>
-                <div className="hover:bg-indigo-100 w-full py-3 rounded-lg">
-                  <Link onClick={() => setNavRot(!navRot)} href={"/blog"} className="hover:text-indigo-500">Blog</Link>  
-                </div>
-                <div className="hover:bg-indigo-100 w-full py-3 rounded-lg">
-                  <Link onClick={() => setNavRot(!navRot)} href={"/about"} className="hover:text-indigo-500">About</Link>  
-                </div>
+                  <Link onClick={() => setNavRot(!navRot)} href={"/"} className="hover:text-indigo-500 underline underline-offset-8 hover:bg-indigo-100 w-full py-3 rounded-lg">Home</Link>  
+
+                  <Link onClick={() => setNavRot(!navRot)} href={"/blog"} className="hover:text-indigo-500 hover:bg-indigo-100 w-full py-3 rounded-lg">Blog</Link>  
+
+
+                {navLinks && navLinks.map((link:any, index:number) => {
+                    return (
+                        
+                  <Link key={index} onClick={() => setNavRot(!navRot)} href={`/${link.route}`} className="hover:bg-indigo-100 w-full py-3 rounded-lg">{link.title}</Link>  
+                
+                    )
+                })}
 
             </div>
             <div className="font-mono flex text-lg mb-10 mx-auto gap-20 ">
