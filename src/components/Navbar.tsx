@@ -20,7 +20,7 @@ export const Navbar = () => {
 
     if (y > 100) {
         if (!navBarLight) {
-            setNavbarColor("bg-white text-slate-950 bg-opacity-20 shadow-2xl backdrop-blur-xl")
+            setNavbarColor("navbar-bg text-slate-950 bg-opacity-20 shadow-2xl backdrop-blur-xl")
             setNavbarLight(true)
         }
     }
