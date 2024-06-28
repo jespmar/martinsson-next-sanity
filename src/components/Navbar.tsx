@@ -20,14 +20,21 @@ export const Navbar = () => {
 
    const checkNav = () => {
 
-    if (y > 100) {
+    if (y > 100 && !navRot) {
         if (!navBarLight) {
-            setNavbarColor("navbar-bg text-slate-950 bg-opacity-20 shadow-2xl backdrop-blur-xl")
+            setNavbarColor("bg-white text-slate-950 bg-opacity-80 shadow-2xl backdrop-blur-xl")
             setNavbarLight(true)
         }
     }
 
-    if (y < 50) {
+    if (y < 50 && !navRot) {
+        if (navBarLight) {
+            setNavbarColor("bg-white text-slate-950")
+            setNavbarLight(false)
+        }
+    }
+
+    if (navRot) {
         if (navBarLight) {
             setNavbarColor("bg-white text-slate-950")
             setNavbarLight(false)
@@ -47,6 +54,7 @@ export const Navbar = () => {
     if (navRot) return "h-screen"
     else return "h-0"
    }
+
 
 
 return (
@@ -69,7 +77,7 @@ return (
             </div>
             
         </div>
-        <div style={{
+        <div  style={{
         transition: "all .9s ease",
         WebkitTransition: "all .9s ease",
         MozTransition: "all .9s ease"}} className={`bg-white overflow-hidden flex flex-col ${nav()}`}>
