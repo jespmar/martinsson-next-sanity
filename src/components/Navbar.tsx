@@ -43,13 +43,6 @@ export const Navbar = () => {
     const [{ x, y }, scrollTo] = useWindowScroll();
     const [navRot, setNavRot] = useState(false)
 
-    const router = useRouter()
-    const setActive = (path:string) => {
-        
-    }
-
-    console.log(router.asPath)
-
    const checkNav = () => {
 
     if (y > 100 && !navRot) {
