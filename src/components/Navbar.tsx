@@ -52,7 +52,7 @@ export const Navbar = () => {
 
    const nav = () => {
     if (navRot) return "h-screen"
-    else return "h-0"
+    else return "h-16"
    }
 
 
@@ -61,9 +61,9 @@ return (
     <div style={{
         transition: "all .9s ease",
         WebkitTransition: "all .9s ease",
-        MozTransition: "all .9s ease"}} className={`w-full fixed top-0 px-4 py-5 ${navbarColor}`}>
-        <div className="flex gap-10 justify-between lg:justify-start w-full max-w-7xl mx-auto">
-            <h1 className="font-mono text-3xl">martinsson<span className="text-indigo-500">.</span>io</h1>
+        MozTransition: "all .9s ease"}} className={`w-full fixed top-0 px-4 flex flex-col overflow-hidden ${navbarColor} ${nav()}`}>
+        <div className="flex gap-10 justify-between lg:justify-start w-full max-w-7xl mx-auto self-center mt-2">
+            <h1 className="font-mono text-3xl self-center">martinsson<span className="text-indigo-500">.</span>io</h1>
             <div className="hidden font-mono gap-5 lg:flex text-lg self-center ">
                 <Link href={"/"} className="hover:text-indigo-500 underline underline-offset-8">Home</Link>
                 <Link href={"/"} className="hover:text-indigo-500">Blog</Link>
@@ -80,7 +80,7 @@ return (
         <div  style={{
         transition: "all .9s ease",
         WebkitTransition: "all .9s ease",
-        MozTransition: "all .9s ease"}} className={`bg-white overflow-hidden flex flex-col ${nav()}`}>
+        MozTransition: "all .9s ease"}} className={`flex flex-col ${nav()}`}>
             <div className="font-mono gap-5 flex flex-col text-2xl mt-10 self-center w-full text-center">
                 <div className="hover:bg-indigo-100 w-full py-3 rounded-lg">
                   <Link onClick={() => setNavRot(!navRot)} href={"/"} className="hover:text-indigo-500 underline underline-offset-8">Home</Link>  
