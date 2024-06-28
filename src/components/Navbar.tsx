@@ -90,7 +90,7 @@ return (
         <div  style={{
         transition: "all .9s ease",
         WebkitTransition: "all .9s ease",
-        MozTransition: "all .9s ease"}} className={`flex flex-col ${nav()} justify-between h-screen`}>
+        MozTransition: "all .9s ease"}} className={`flex flex-col ${nav()} h-screen gap-20`}>
             <div className="font-mono gap-5 flex flex-col text-2xl mt-10 self-center w-full text-center">
                 <div className="hover:bg-indigo-100 w-full py-3 rounded-lg">
                   <Link onClick={() => setNavRot(!navRot)} href={"/"} className="hover:text-indigo-500 underline underline-offset-8">Home</Link>  
