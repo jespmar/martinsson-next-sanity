@@ -1,7 +1,7 @@
 import '~/styles/global.css'
 
 import type { AppProps } from 'next/app'
-import { IBM_Plex_Mono, Inter, PT_Serif, Open_Sans, Dosis, PT_Mono } from 'next/font/google'
+import { IBM_Plex_Serif, Inter, PT_Serif, Open_Sans, Dosis, PT_Mono } from 'next/font/google'
 import { lazy } from 'react'
 import { Navbar } from '~/components/Navbar'
 
@@ -24,11 +24,11 @@ const sans = Dosis({
   weight: ["200","300", "400", "500", "600", "700", "800"],
 })
 
-const serif = PT_Serif({
+const serif = IBM_Plex_Serif({
   variable: '--font-family-serif',
   style: ['normal', 'italic'],
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ["100","200","300","400", "700"],
 })
 
 export default function App({

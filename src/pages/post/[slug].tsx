@@ -56,9 +56,7 @@ export default function ProjectSlugRoute(
     <Container>
     <div className='w-full'>
     <section className="max-w-3xl mx-auto">
-      <h3 className='text-center text-sm text-gray-600'>{post.publishDate ? <span>{formatDate(post.publishDate)}</span> : <span>{formatDate(post._createdAt)}</span>}</h3>
 
-    <h1 className="text-5xl text-center uppercase">{post.title}</h1>
         {post.mainImage ? (
           <Image
             className="mx-auto  object-contain rounded-lg my-4"
@@ -70,12 +68,19 @@ export default function ProjectSlugRoute(
         ) : (
           <div className="post__cover--none" />
         )}
-        <div className="post__container">
-          <p className="text-xl my-3">{post.excerpt}</p>
-          <div className="post__content">
+              <div className="py-2">
+      <span className=" text-white text-sm font-mono bg-indigo-500 p-1 rounded-lg">{post.publishDate ? <span>{formatDate(post.publishDate)}</span> : <span>{formatDate(post._createdAt)}</span>}</span>
+        <h3 className="text-2xl lg:text-4xl font-semibold font-serif mb-1 mt-2">
+          <a href={`/post/${post.slug.current}`}>
+            {post.title}
+          </a>
+        </h3>
+        <p className="font-light text-xl italic text-indigo-950">{post.excerpt}</p>
+        <hr className='my-2 border-indigo-300' />
+        <div className="post__content">
             <PortableText body={post.body}/>
           </div>
-        </div>
+      </div>
       </section>
     </div>
     </Container>

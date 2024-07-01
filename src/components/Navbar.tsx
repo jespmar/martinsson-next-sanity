@@ -91,8 +91,8 @@ return (
             <Link href={"/"} className="font-mono text-3xl self-center">martinsson<span className="text-indigo-500">.</span>io</Link>
             <div className="flex justify-between w-full">
             <div className="hidden font-mono gap-5 lg:flex text-lg self-center ">
-                <Link href={"/"} className="hover:text-indigo-500 underline underline-offset-8">Home</Link>
-                <Link href={"/"} className="hover:text-indigo-500">Blog</Link>
+                <Link href={"/"} className="hover:text-indigo-500 underline underline-offset-8">Blog</Link>
+                <Link href={"/"} className="hover:text-indigo-500">Archive</Link>
                 {navLinks && navLinks.map((link:any, index:number) => {
                     return (
                         <Link key={index} href={`/${link.route}`} className="hover:text-indigo-500">{link.title}</Link>
