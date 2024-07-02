@@ -9,13 +9,10 @@ import { readToken } from '~/lib/sanity.api'
 import { getClient } from '~/lib/sanity.client'
 import { urlForImage } from '~/lib/sanity.image'
 import {
-  getPost,
-  type Post,
-  postBySlugQuery,
-  postSlugsQuery,
-  pageSlugsQuery,
-  pageBySlugQuery,
   getPage,
+  pageBySlugQuery,
+  pageSlugsQuery,
+  type Post,
 } from '~/lib/sanity.queries'
 import type { SharedPageProps } from '~/pages/_app'
 import { formatDate } from '~/utils'
@@ -63,7 +60,7 @@ export default function ProjectSlugRoute(
         {post.mainImage ? (
           <Image
             className="mx-auto  object-contain rounded-lg my-4"
-            src={urlForImage(post.mainImage).url()}
+            src={urlForImage(post.mainImage).size(1000, 1000).url()}
             height={1000}
             width={1000}
             alt=""

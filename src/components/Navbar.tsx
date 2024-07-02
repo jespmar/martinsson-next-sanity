@@ -2,8 +2,6 @@
 import { useWindowScroll } from "@uidotdev/usehooks";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useLiveQuery } from "next-sanity/preview";
 import { useEffect, useState } from "react"
 import { AiOutlinePlus } from "react-icons/ai";
 import { FaLinkedin } from "react-icons/fa";
@@ -118,9 +116,9 @@ return (
         WebkitTransition: "all .9s ease",
         MozTransition: "all .9s ease"}} className={`flex flex-col ${nav()} h-screen gap-20`}>
             <div className="font-mono gap-5 flex flex-col text-2xl mt-10 self-center w-full text-center">
-                  <Link onClick={() => setNavRot(!navRot)} href={"/"} className="hover:text-indigo-500 underline underline-offset-8 hover:bg-indigo-100 w-full py-3 rounded-lg">Home</Link>  
+                  <Link onClick={() => setNavRot(!navRot)} href={"/"} className="hover:text-indigo-500 underline underline-offset-8 hover:bg-indigo-100 w-full py-3 rounded-lg">Blog</Link>  
 
-                  <Link onClick={() => setNavRot(!navRot)} href={"/blog"} className="hover:text-indigo-500 hover:bg-indigo-100 w-full py-3 rounded-lg">Blog</Link>  
+                  <Link onClick={() => setNavRot(!navRot)} href={"/blog"} className="hover:text-indigo-500 hover:bg-indigo-100 w-full py-3 rounded-lg">Archive</Link>  
 
 
                 {navLinks && navLinks.map((link:any, index:number) => {

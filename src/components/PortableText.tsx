@@ -2,9 +2,6 @@ import { Block } from "./Block"
 import { ImageBlock } from "./Image"
 
 export const PortableText = ({body}:any) => {
-
-    console.log(body)
-
     return (
         <div>
             {body?.length > 0 && body.map((block:any, index:number) => {
