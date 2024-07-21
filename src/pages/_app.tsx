@@ -1,6 +1,7 @@
 import '~/styles/global.css'
 
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { AppProps } from 'next/app'
 import { Dosis, IBM_Plex_Serif, Inter, Open_Sans, PT_Mono,PT_Serif } from 'next/font/google'
 import { lazy } from 'react'
@@ -49,6 +50,7 @@ export default function App({
           }
         `}
       </style>
+      <SpeedInsights/>
       <Analytics />
       <Navbar />
       {draftMode ? (
