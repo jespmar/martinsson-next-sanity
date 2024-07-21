@@ -1,8 +1,10 @@
 import '~/styles/global.css'
 
+import { Analytics } from "@vercel/analytics/react"
 import type { AppProps } from 'next/app'
-import { IBM_Plex_Serif, Inter, PT_Serif, Open_Sans, Dosis, PT_Mono } from 'next/font/google'
+import { Dosis, IBM_Plex_Serif, Inter, Open_Sans, PT_Mono,PT_Serif } from 'next/font/google'
 import { lazy } from 'react'
+
 import { Navbar } from '~/components/Navbar'
 
 export interface SharedPageProps {
@@ -47,6 +49,7 @@ export default function App({
           }
         `}
       </style>
+      <Analytics />
       <Navbar />
       {draftMode ? (
         <PreviewProvider token={token}>
