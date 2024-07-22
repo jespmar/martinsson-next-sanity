@@ -43,7 +43,7 @@ export const Navbar = () => {
         })
     },[])
 
-    const [navbarColor, setNavbarColor] = useState("bg-white text-slate-950")
+    const [navbarColor, setNavbarColor] = useState("dark:bg-gray-950 bg-white text-slate-950 dark:text-white")
     const [navBarLight, setNavbarLight] = useState(false)
     const [navLinks, setNavLinks]:any = useState()
     const [{ x, y }, scrollTo] = useWindowScroll();
@@ -53,21 +53,21 @@ export const Navbar = () => {
 
     if (y > 100 && !navRot) {
         if (!navBarLight) {
-            setNavbarColor("bg-white text-slate-950 bg-opacity-80 shadow-2xl backdrop-blur-xl")
+            setNavbarColor("dark:bg-gray-950 bg-white text-slate-950 bg-opacity-80 shadow-2xl backdrop-blur-xl dark:text-white")
             setNavbarLight(true)
         }
     }
 
     if (y < 50 && !navRot) {
         if (navBarLight) {
-            setNavbarColor("bg-white text-slate-950")
+            setNavbarColor("dark:bg-gray-950 bg-white text-slate-950 dark:text-white")
             setNavbarLight(false)
         }
     }
 
     if (navRot) {
         if (navBarLight) {
-            setNavbarColor("bg-white text-slate-950")
+            setNavbarColor("dark:bg-gray-950 bg-white text-slate-950 dark:text-white")
             setNavbarLight(false)
         }
     }

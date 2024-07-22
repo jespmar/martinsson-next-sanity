@@ -36,7 +36,7 @@ export default function Card({ post }: { post: Post }) {
         <div className="card__cover--none" />
       )}
       <div className="py-2">
-        <p className="font-light text-lg lg:text-xl italic text-indigo-950">{post.excerpt}</p>
+        <p className="font-light text-lg lg:text-xl italic text-indigo-950 dark:text-indigo-300">{post.excerpt}</p>
         <hr className='my-2 border-indigo-300' />
         <div className="post__content">
             <PortableText body={post.body}/>

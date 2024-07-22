@@ -56,7 +56,6 @@ export default function ProjectSlugRoute(
     <Container>
     <div className='w-full'>
     <section className="max-w-4xl mx-auto">
-    <h1 className="text-5xl text-center ">{post.title}</h1>
         {post.mainImage ? (
           <Image
             className="mx-auto  object-contain rounded-lg my-4"
