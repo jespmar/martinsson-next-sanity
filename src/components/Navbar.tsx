@@ -43,7 +43,7 @@ export const Navbar = () => {
         })
     },[])
 
-    const [navbarColor, setNavbarColor] = useState("dark:bg-gray-950 bg-white text-slate-950 dark:text-white")
+    const [navbarColor, setNavbarColor] = useState("dark:bg-gray-900 bg-white text-slate-950 dark:text-white")
     const [navBarLight, setNavbarLight] = useState(false)
     const [navLinks, setNavLinks]:any = useState()
     const [{ x, y }, scrollTo] = useWindowScroll();
@@ -60,14 +60,14 @@ export const Navbar = () => {
 
     if (y < 50 && !navRot) {
         if (navBarLight) {
-            setNavbarColor("dark:bg-gray-950 bg-white text-slate-950 dark:text-white")
+            setNavbarColor("dark:bg-gray-900 bg-white text-slate-950 dark:text-white")
             setNavbarLight(false)
         }
     }
 
     if (navRot) {
         if (navBarLight) {
-            setNavbarColor("dark:bg-gray-950 bg-white text-slate-950 dark:text-white")
+            setNavbarColor("dark:bg-gray-900 bg-white text-slate-950 dark:text-white")
             setNavbarLight(false)
         }
     }
@@ -94,7 +94,7 @@ return (
         WebkitTransition: "all .5s ease",
         MozTransition: "all .5s ease"}} className={`w-full fixed top-0 px-4 flex flex-col overflow-hidden ${navbarColor} ${nav()}`}>
         <div className="flex gap-10 justify-between lg:justify-start w-full max-w-7xl mx-auto self-center mt-2">
-            <Link href={"/"} className="font-mono text-3xl self-center">martinsson<span className="text-indigo-500">.</span>io</Link>
+            <Link href={"/"} className="font-mono text-3xl self-center cursor-pointer">martinsson<span className="text-indigo-500">.</span>io</Link>
             <div className="flex justify-between w-full">
             <div className="hidden font-mono gap-5 lg:flex text-lg self-center ">
                 <Link href={"/"} className={`hover:text-indigo-500 underline-offset-8 ${isActive("")}`}>Blog</Link>
@@ -127,15 +127,15 @@ return (
         WebkitTransition: "all .9s ease",
         MozTransition: "all .9s ease"}} className={`flex flex-col ${nav()} h-screen gap-20`}>
             <div className="font-mono gap-5 flex flex-col text-2xl mt-10 self-center w-full text-center">
-                  <Link onClick={() => setNavRot(!navRot)} href={"/"} className={`hover:text-indigo-500 hover:bg-indigo-100 w-full py-3 rounded-lg ${isActive("")}`}>Blog</Link>  
+                  <Link onClick={() => setNavRot(!navRot)} href={"/"} className={`hover:text-indigo-500 hover:bg-indigo-100 dark:hover:bg-indigo-900 w-full py-3 rounded-lg ${isActive("")}`}>Blog</Link>  
 
-                  <Link onClick={() => setNavRot(!navRot)} href={"/archive"} className={`hover:text-indigo-500 hover:bg-indigo-100 w-full py-3 rounded-lg ${isActive("archive")}`}>Archive</Link>  
+                  <Link onClick={() => setNavRot(!navRot)} href={"/archive"} className={`hover:text-indigo-500 hover:bg-indigo-100 dark:hover:bg-indigo-900 w-full py-3 rounded-lg ${isActive("archive")}`}>Archive</Link>  
 
 
                 {navLinks && navLinks.map((link:any, index:number) => {
                     return (
                         
-                  <Link key={index} onClick={() => setNavRot(!navRot)} href={`/${link.route}`} className={`hover:text-indigo-500 hover:bg-indigo-100 w-full py-3 rounded-lg ${isActive(link.route)}`}>{link.title}</Link>  
+                  <Link key={index} onClick={() => setNavRot(!navRot)} href={`/${link.route}`} className={`hover:text-indigo-500 dark:hover:bg-indigo-900 hover:bg-indigo-100 w-full py-3 rounded-lg ${isActive(link.route)}`}>{link.title}</Link>  
                 
                     )
                 })}
