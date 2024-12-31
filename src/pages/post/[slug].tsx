@@ -75,7 +75,7 @@ export default function ProjectSlugRoute(
             {post.title}
           </a>
         </h3>
-        <p className="font-light text-xl italic text-indigo-950">{post.excerpt}</p>
+        <p className="font-light text-xl italic text-indigo-950 dark:text-indigo-400">{post.excerpt}</p>
         <hr className='my-2 border-indigo-300' />
         <div className="post__content">
             <PortableText body={post.body}/>
